@@ -7,7 +7,7 @@ class Weapon(Item):
     weapon_type: WeaponType
     prefix: str
 
-    def __init__(self,weapon_type: WeaponType, prefix:str = "", name: str = "", effects: List[Effect] = [], market_value: int = 0):
+    def __init__(self,weapon_type: WeaponType, prefix:str, name: str = "", effects: List[Effect] = [], market_value: int = 0):
         """Initialize a new instance of an weapon object."""
         if name:
             name += " (" + prefix + " " + weaponName(weapon_type) + ")"
