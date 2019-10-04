@@ -1,8 +1,9 @@
-from move import Move
-from effect import Effect
-from stats import Stats
-from armor import Armor
-from weapon import Weapon
+from models.move import Move
+from models.effect import Effect
+from models.stats import Stats
+from models.armor import Armor
+from models. weapon import Weapon
+
 from typing import List
 
 class Fighter:

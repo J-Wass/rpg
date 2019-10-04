@@ -1,10 +1,10 @@
-from ..models.fighter import Fighter
-from ..models.item import Item
-from stats import Stats
-from armor import Armor
-from weapon import Weapon
-from ..constants.enums import ArmorType, WeaponType, weaponName, armorName
-from ..constants import lists
+from models.fighter import Fighter
+from models.item import Item
+from models.stats import Stats
+from models.armor import Armor
+from models.weapon import Weapon
+from constants.enums import ArmorType, WeaponType
+from constants import lists
 
 from typing import List, Tuple
 import random

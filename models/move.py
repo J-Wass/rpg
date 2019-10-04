@@ -1,5 +1,5 @@
-from effect import Effect
-from ..constants.enums import ElementalType
+from models.effect import Effect
+from constants.enums import ElementalType
 
 from typing import List, Optional
 

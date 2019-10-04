@@ -1,4 +1,4 @@
-from ..constants.enums import StatType
+from constants.enums import StatType
 
 class Effect:
     name: str

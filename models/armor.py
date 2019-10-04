@@ -1,6 +1,7 @@
-from effect import Effect
-from item import Item
-from ..constants.enums import ArmorType, armorName
+from models.effect import Effect
+from models.item import Item
+from constants.enums import ArmorType, armorName
+
 from typing import List
 
 class Armor(Item):

@@ -1,4 +1,4 @@
-from ..models.effect import Effect
+from models.effect import Effect
 from typing import List
 
 class Item():
