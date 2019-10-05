@@ -12,6 +12,6 @@ class Weapon(Item):
         """Initialize a new instance of an weapon object."""
         if name:
             name += " (" + prefix + " " + weaponName(weapon_type) + ")"
-            super(name, effects, market_value)
+            super().__init__(name=name, effects=effects,market_value=market_value)
         else:
-            super(prefix + " " + weaponName(weapon_type), effects, market_value)
+            super().__init__(name=prefix + " " + weaponName(weapon_type), effects=effects, market_value=market_value)

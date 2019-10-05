@@ -8,7 +8,6 @@ class Item():
 
     def __init__(self,name:str, effects: List[Effect] = [], market_value: int = 0):
         """Initialize a new instance of an item object."""
-        super(name, effects, market_value)
         self.name = name
         self.effects = effects
         self.market_value = market_value

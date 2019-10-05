@@ -6,18 +6,18 @@ from models.weapon import Weapon
 from constants.enums import ArmorType, WeaponType
 from constants import lists
 
-from typing import List, Tuple
+from typing import List
 import random
 
 class Player:
     fighter: Fighter
-    location = Tuple[int,int]
+    location: List[int]
     gold: int
     items: List[Item]
 
-    def __init__(self, name: str, location: Tuple[int,int] = (0,0), gold: int = 0, items: List[Item] = []):
+    def __init__(self, name: str, location: List[int] = [560,100], gold: int = 0, items: List[Item] = []):
         """Initialize an instance of the playable character."""
-        player_weapon: Weapon = Weapon(WeaponType.FISTS,self.get_random_fists_prefiz())
+        player_weapon: Weapon = Weapon(WeaponType.FISTS,self.get_random_fists_prefix())
         player_weapon: Armor = Armor(ArmorType.RAGS,self.get_random_rags_prefix())
         player_weapon: Stats = Stats(level=1,health=100,speed=1)
         self.fighter = Fighter(name, player_weapon, player_weapon, player_weapon)
@@ -26,7 +26,7 @@ class Player:
         self.items = items
 
     @staticmethod
-    def get_random_fist_prefix():
+    def get_random_fists_prefix():
         """Get a random prefix for fist weapon."""
         return random.choice(lists.fist_prefixes)
 

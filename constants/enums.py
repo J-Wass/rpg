@@ -1,5 +1,11 @@
 from enum import Enum
 
+class GameState(Enum):
+    STARTING=0
+    WORLDMAP=1
+    CITY=2
+    BATTLE=3
+
 class ElementalType(Enum):
     NONE=0
     FIRE=1
@@ -18,9 +24,9 @@ class StatType(Enum):
     LUCK=6
 
 class ArmorType(Enum):
-    NONE=0
+    RAGS=0
     PLATE_ARMOR=1
-    CHAINMAIL=2
+    CHAIN_MAIL=2
     ROBES=3
 
 def armorName(armor_type: ArmorType):
@@ -31,13 +37,13 @@ def armorName(armor_type: ArmorType):
         return "Chain Mail"
     elif armor_type == ArmorType.ROBES:
         return "Robes"
-    elif armor_type == ArmorType.NONE:
-        return "None"
+    elif armor_type == ArmorType.RAGS:
+        return "Rags"
     else:
          raise ValueError
 
 class WeaponType(Enum):
-    NONE=0
+    FISTS=0
     SWORD=1
     HALBERD=2
     LONGBOW=3
@@ -56,7 +62,7 @@ def weaponName(weapon_type: WeaponType):
         return "Crossbow"
     elif weapon_type == WeaponType.STAFF:
         return "Staff"
-    elif weapon_type == WeaponType.NONE:
-        return "None"
+    elif weapon_type == WeaponType.FISTS:
+        return "Fists"
     else:
          raise ValueError

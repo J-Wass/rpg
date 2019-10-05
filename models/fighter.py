@@ -73,9 +73,9 @@ class Fighter:
         self.stats.mana += 2
 
         print("\nCongrats! You have reached level {0}!".format(self.stats.level))
-        print("\nHealth: {0} -> {1} (+{2})".format( old_health, self.stats.health, self.stats.health-old_health))
-        print("\nMana: {0} -> {1} (+{2})".format( old_mana, self.stats.mana, self.stats.mana-old_mana))
-        print("\nStrength: {0} -> {1} (+{2})".format( old_strength, self.stats.strength, self.stats.strength-old_strength))
-        print("\nDexterity: {0} -> {1} (+{2})".format( old_dexterity, self.stats.dexterity, self.stats.dexterity-old_dexterity))
-        print("\nIntelligence: {0} -> {1} (+{2})".format( old_intelligence, self.stats.intelligence, self.stats.intelligence-old_intelligence))
-        print("\nSpeed: {0} -> {1} (+{2})".format( old_speed, self.stats.speed, self.stats.speed-old_speed))
+        print("\nHealth:\t{0} -> {1} (+{2})".format( old_health, self.stats.health, self.stats.health-old_health))
+        print("\nMana:\t{0} -> {1} (+{2})".format( old_mana, self.stats.mana, self.stats.mana-old_mana))
+        print("\nStrength:\t{0} -> {1} (+{2})".format( old_strength, self.stats.strength, self.stats.strength-old_strength))
+        print("\nDexterity:\t{0} -> {1} (+{2})".format( old_dexterity, self.stats.dexterity, self.stats.dexterity-old_dexterity))
+        print("\nIntelligence:\t{0} -> {1} (+{2})".format( old_intelligence, self.stats.intelligence, self.stats.intelligence-old_intelligence))
+        print("\nSpeed:\t{0} -> {1} (+{2})".format( old_speed, self.stats.speed, self.stats.speed-old_speed))
