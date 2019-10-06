@@ -1,6 +1,6 @@
 from models.player import Player
 from constants.enums import GameState
-from utils import askWithOptions, newGameOrLoad, printWorldMap, canMoveTo
+from utils import askWithOptions, newGameOrLoad, printWorldMap, canMoveTo, presentMainMenu
 
 player: Player
 game_state: int = GameState.STARTING
@@ -8,12 +8,13 @@ game_state: int = GameState.STARTING
 while True:
     if game_state == GameState.STARTING:
         player = newGameOrLoad()
-        game_state = GameState.WORLDMAP
+        if player:
+            game_state = GameState.WORLDMAP
     elif game_state == GameState.WORLDMAP:
         printWorldMap(player.location)
         direction: str = askWithOptions(["North", "South", "East", "West", "Menu"])
         if direction == "menu":
-            game_state == GameState.MAINMENU
+            game_state = GameState.MAINMENU
         elif direction == "north":
             if canMoveTo(player.location[0],player.location[1]-1):
                 player.location[1] -= 1
@@ -26,3 +27,6 @@ while True:
         else:
             if canMoveTo(player.location[0],player.location[1]+1):
                 player.location[1] += 1
+    elif game_state == GameState.MAINMENU:
+        presentMainMenu(player)
+        game_state = GameState.WORLDMAP
