@@ -15,7 +15,7 @@ class Player:
     gold: int
     items: List[Item]
 
-    def __init__(self, name: str, location: List[int] = [560,100], gold: int = 0, items: List[Item] = []):
+    def __init__(self, name: str, location: List[int] = [56,10], gold: int = 0, items: List[Item] = []):
         """Initialize an instance of the playable character."""
         player_weapon: Weapon = Weapon(WeaponType.FISTS,self.get_random_fists_prefix())
         player_weapon: Armor = Armor(ArmorType.RAGS,self.get_random_rags_prefix())

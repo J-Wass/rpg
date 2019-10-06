@@ -1,5 +1,6 @@
 from models.player import Player
 from constants.art import worldmap
+from constants.lists import impassable_spaces
 
 from typing import Set, List
 try:
@@ -46,7 +47,7 @@ def askWithOptions(options: Set[str]) -> int:
     readline.set_completer(SimpleCompleter(options).complete)
 
     choice: str = ""
-    while(choice.lower() not in list(map(lambda x: x.lower(), options))):
+    while(choice not in list(map(lambda x: x.lower(), options))):
         print(prompt)
         choice = askInput()
         print("\n")
@@ -54,7 +55,7 @@ def askWithOptions(options: Set[str]) -> int:
 
 def askInput() -> str:
     """Ask the user for input."""
-    return input("> ")
+    return input("> ").lower()
 
 def newGameOrLoad():
     """Asks the user to load or start new game."""
@@ -79,8 +80,8 @@ def newGameOrLoad():
 
 def printWorldMap(location: List[int]):
     """Print the worldmap with the player at the intended location."""
-    x: int = int(location[0]/10)
-    y: int = int(location[1]/10)
+    x: int = location[0]
+    y: int = location[1]
 
     map: List[str] = worldmap.copy()
     row: List[str] = list(map[y])
@@ -88,4 +89,7 @@ def printWorldMap(location: List[int]):
     map[y] = "".join(row)
 
     print("\n".join(map))
-    print("Location: {0},{1}".format(location[0],location[1]))
+
+def canMoveTo(x: int, y: int) -> bool:
+    """Determine if x,y location is traversable."""
+    return worldmap[y][x] not in impassable_spaces

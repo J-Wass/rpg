@@ -5,6 +5,7 @@ class GameState(Enum):
     WORLDMAP=1
     CITY=2
     BATTLE=3
+    MAINMENU=4
 
 class ElementalType(Enum):
     NONE=0

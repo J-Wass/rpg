@@ -12,4 +12,6 @@ rags_prefixes = [
     "Stained"
 ]
 
-impassable_spaces = set(['~'])
+impassable_spaces = set(['~','-'])
+
+town_locations = [[12,14],[24,18],[23,64]]
