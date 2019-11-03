@@ -13,5 +13,3 @@ rags_prefixes = [
 ]
 
 impassable_spaces = set(['~','-'])
-
-town_locations = [[12,14],[24,18],[23,64]]

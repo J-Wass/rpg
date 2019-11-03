@@ -1,11 +1,10 @@
 from enum import Enum
 
 class GameState(Enum):
-    STARTING=0
-    WORLDMAP=1
-    CITY=2
-    BATTLE=3
-    MAINMENU=4
+    WORLDMAP=0
+    CITY=1
+    BATTLE=2
+    MAINMENU=3
 
 class ElementalType(Enum):
     NONE=0

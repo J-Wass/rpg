@@ -1,4 +1,5 @@
 from models.player import Player
+from models.stats import Stats
 from constants.art import worldmap
 from constants.lists import impassable_spaces
 
@@ -103,6 +104,10 @@ def canMoveTo(x: int, y: int) -> bool:
     """Determine if x,y location is traversable."""
     return worldmap[y][x] not in impassable_spaces
 
+def enterToContinue():
+    """Request the use to hit enter to continue game."""
+    input("Hit enter to continue...")
+
 def presentMainMenu(player: Player):
     """Show the main menu and ask the user to select an option."""
     choice: str = askWithOptions(['Save','Stats', 'Items', 'Go Back'])
@@ -115,11 +120,21 @@ def presentMainMenu(player: Player):
                 pickle.dump(player, f)
             print("Game Saved.\n")
     elif choice == 'stats':
-        ## TODO:
-        print("todo")
+        stats: Stats = player.fighter.stats
+        print("\n{0} at {1}x{2}".format(player.fighter.name, player.location[0], player.location[1]))
+        print("Level:\t{0} ({1}/{2}xp)".format(stats.level, stats.xp, stats.level ** 2))
+        print("Gold:\t{0}".format(player.gold))
+        print("--------")
+        print("Health:\t\t{0}".format(stats.health))
+        print("Mana:\t\t{0}".format(stats.mana))
+        print("Strength:\t{0}".format(stats.strength))
+        print("Dexterity:\t{0}".format(stats.dexterity))
+        print("Intelligence:\t{0}".format(stats.intelligence))
+        print("Speed:\t\t{0}".format(stats.speed))
+        enterToContinue()
     elif choice == 'items':
         ## TODO:
         print("todo")
     else:
-        ## TODO: 
+        ## TODO:
         print("todo")
